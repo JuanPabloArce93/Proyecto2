@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // enviar los datos
     api({
       method: editar.value ? "PUT" : "POST",
-      url: editar.value ? `/cliente/${editar.value}` : "/cliente",
+      url: editar.value ? `/clientes/${editar.value}` : "/clientes",
       data,
     })
       .then(({ data }) => {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 export function cargarDatosCliente(pagina = 1) {
   const wrapper = document.querySelector("#card-wrapper");
   wrapper.innerHTML = "";
-  // peticion a localhost:3000/clientes del server de node
+  // peticion a localhost:3001/clientes del server de node
   api.get(`/clientes?page=${pagina}&perPage=9`).then(({ data }) => {
      
     for (const cliente of data) {

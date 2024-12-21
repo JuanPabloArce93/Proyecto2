@@ -35,7 +35,7 @@ router.get("/clientes", function (request, response) {
   )
 })
 
-router.post("/cliente", async function (request, response) {
+router.post("/clientes", async function (request, response) {
   const datos = request.body
 
   try {
@@ -69,7 +69,7 @@ router.post("/cliente", async function (request, response) {
   }
 })
 
-router.get("/cliente/:id", function (request, response) {
+router.get("/clientes/:id", function (request, response) {
   const { id } = request.params
 
   const query = "SELECT * FROM clientes WHERE id = ?"
@@ -92,7 +92,7 @@ router.get("/cliente/:id", function (request, response) {
   })
 })
 
-router.put("/cliente/:id", async function (request, response) {
+router.put("/clientes/:id", async function (request, response) {
   const data = request.body
   const { id } = request.params
 
@@ -130,7 +130,7 @@ router.put("/cliente/:id", async function (request, response) {
   }
 }) // cierre del put
 
-router.delete("/cliente/:id", function (request, response){
+router.delete("/clientes/:id", function (request, response){
   const {id} = request.params
 
   const query = "DELETE FROM clientes WHERE id = ?"
