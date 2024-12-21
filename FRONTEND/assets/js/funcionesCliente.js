@@ -4,7 +4,7 @@ const form = document.querySelector("form");
 
 
 window.editarCliente = function (id) {
-  fetch("http://localhost:3000/cliente/" + id)
+  fetch("http://localhost:3001/clientes/" + id)
     .then((response) => response.json())
     .then((data) => {
       const { editar, documento, nombre, apellidos, email, fecha_nacimiento, image } =
@@ -41,7 +41,7 @@ window.eliminarCliente = function (id) {
     cancelButtonText: "Cancelar",
   }).then(function (result) {
     if (result.isConfirmed) {
-      fetch(`http://localhost:3000/cliente/${id}`, {
+      fetch(`http://localhost:3001/clientes/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
